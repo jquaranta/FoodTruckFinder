@@ -62,6 +62,3 @@ public class FTFSearch {
    		return null;
 	}
 }
-
-// to run:
-// $ javac FoodTruckFinder.java && java FoodTruckFinder
