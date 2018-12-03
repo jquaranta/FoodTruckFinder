@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class FoodTruckFinder {
 
     public static void main(String[] args) {
-	// write your code here
         FTFSearch search = new FTFSearch();
         int index = 0;
         String input;
@@ -24,6 +23,7 @@ public class FoodTruckFinder {
             System.out.format("%-3c %-40s %-1s %n", '#', "Name", "Address");
             for (int i = index; i < index + 10; i++)
             {
+				//keep the true index at the start, iterate over this batch of 10's index and pull names and addresses. dodges outofrangeexceptions. i was going to add closing hour but ended up cutting it to adhere to the prompt
                 if (i < trucks.size())
                 {
                     System.out.format("%-3d %-40s %-1s %n", i + 1, trucks.get(i).getName(),  trucks.get(i).getAddress());
@@ -39,6 +39,7 @@ public class FoodTruckFinder {
             }
             System.out.println("\"q\" to quit");
 
+			//input loop (some barebones error checking and input parsing) allows forwards and backwards batch movement
             inputting = true;
             while(inputting)
             {
